@@ -41,8 +41,8 @@ print()
 
 alunosNota10 = control_arq.estudanteNota10('notasAlunos.txt')
 print("Estudantes com nota 10")
-try:
+if alunosNota10 is not None:
     for aluno in alunosNota10:
         print(aluno)
-except IndexError:
+else:
     print("Nenhum estudante com nota 10.")

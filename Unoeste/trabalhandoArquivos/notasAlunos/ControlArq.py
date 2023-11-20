@@ -34,14 +34,8 @@ class ControlArq:
                 notas_str = dados[1].split(': ')[1].rstrip(';')
                 notas = list(map(float, notas_str.split(', ')))
 
-                maior = float('-inf') # inicializa a variavel com um valor muito baixo
-                menor = float('inf') # inicializa a variavel com um valor muito alto
-
-                for nota in notas:
-                    if nota > maior:
-                        maior = nota
-                    else:
-                        menor = nota
+                maior = max(notas)
+                menor = min(notas)
 
                 print(f"Aluno: {nome} - Maior nota: {maior}, Menor nota: {menor}")
 
@@ -60,5 +54,5 @@ class ControlArq:
                         notasFormatada = f"Nome: {nome}; Nota: {nota}"
                         notas10.append(notasFormatada)
 
-        return notas10
+        return notas10 if notas10 else None #Caso a lista estaja vazia o retorno sera None
 
