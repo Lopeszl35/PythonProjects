@@ -1,2 +1,3 @@
-Nome: Rafael; Notas: 10.0, 0.0, 10.0;
-Nome: 10; Notas: 10.0, 10.0, 10.0;
+Nome: rafael; Notas: 10.0, 9.0, 6.0, 8.0, 9.0, 6.0;
+Nome: gustavo; Notas: 6.0, 9.0, 6.0;
+Nome: eduardo; Notas: 9.0, 7.0, 9.0, 6.0, 4.0, 6.0;

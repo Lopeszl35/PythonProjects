@@ -2,22 +2,22 @@ from ControlArq import ControlArq
 
 quantAlunos = int(input("Quantos alunos serão informados? "))
 
-notas = []
-nomes = []
-quantNotas = 0
+dados_alunos = []
 for i in range(quantAlunos):
-    nome = input(f"Qual o nome {i+1} do aluno: ")
-    quantNotas = int(input(f"Quantas notas tera o aluno {nome}?: "))
-    nomes.append(nome)
-    print()
-    print(f"Informe a nota do aluno {nome}")
-    for j in range(quantNotas):
-        nota = float(input(f"Informe a {j+1}° nota: "))
-        notas.append(nota)
-    print()
-# Criando a string formatada para cada aluno
-dados_alunos = [f"Nome: {nomes[i]}; Notas: {', '.join(map(str, notas[i*quantNotas:(i+1)*quantNotas]))};" for i in range(len(nomes))]
+    nome = input(f"Qual o nome {i + 1}° do aluno: ")
+    quantNotas = int(input(f"Quantas notas terá o aluno {nome}?: "))
 
+    notas = []
+    print()
+    print(f"Informe as notas do aluno {nome}")
+    for j in range(quantNotas):
+        nota = float(input(f"Informe a {j + 1}° nota: "))
+        notas.append(nota)
+
+    # Criando a string formatada para cada aluno
+    dados_aluno = f"Nome: {nome}; Notas: {', '.join(map(str, notas))};"
+    dados_alunos.append(dados_aluno)
+    print()
 
 # Escrevendo os dados no arquivo notasAlunos.txt
 with open('notasAlunos.txt', 'w') as file:
@@ -25,9 +25,21 @@ with open('notasAlunos.txt', 'w') as file:
         file.write(dados + '\n')
 
 control_arq = ControlArq()
+
 print()
 print("Alunos com menos de 5 notas")
 control_arq.nomes5Notas('notasAlunos.txt')
+
 print()
 print("Média de cada aluno")
+
 control_arq.mediaNotas('notasAlunos.txt')
+print()
+
+control_arq.maiorMenorNota('notasAlunos.txt')
+print()
+
+alunosNota10 = control_arq.estudanteNota10('notasAlunos.txt')
+print("Estudantes com nota 10")
+for aluno in alunosNota10:
+    print(aluno)
