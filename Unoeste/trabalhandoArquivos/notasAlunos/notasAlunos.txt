@@ -1,0 +1,2 @@
+Nome: Rafael; Notas: 10.0, 0.0, 10.0;
+Nome: 10; Notas: 10.0, 10.0, 10.0;
