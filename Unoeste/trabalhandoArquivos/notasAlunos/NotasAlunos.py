@@ -41,5 +41,8 @@ print()
 
 alunosNota10 = control_arq.estudanteNota10('notasAlunos.txt')
 print("Estudantes com nota 10")
-for aluno in alunosNota10:
-    print(aluno)
+try:
+    for aluno in alunosNota10:
+        print(aluno)
+except IndexError:
+    print("Nenhum estudante com nota 10.")

@@ -2,12 +2,16 @@ class ControlArq:
 
     def nomes5Notas(self, arq):
         with open(arq, 'r') as arqNotas:
+            count = 0
             for linha in arqNotas:
                 dados = linha.split(';')
                 nome = dados[0].split(': ')[1]
                 notas = dados[1].split(': ')[1].split(', ')
                 if len(notas) < 5:
                     print(nome)
+                    count +=1
+            if count == 0:
+                print("Nenhum estudante tem menos de 5 notas")
 
 
 
