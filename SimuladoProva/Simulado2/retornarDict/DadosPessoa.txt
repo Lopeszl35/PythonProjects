@@ -1,0 +1,3 @@
+Nome: João
+Idade: 25
+Profissão: Estudante
