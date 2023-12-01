@@ -10,8 +10,8 @@ def ler_dados(nome_arquivo: str) -> dict:
                     chave, valor = linha.split(': ')
                     if chave == 'Nome':
                         bloco_atual = valor  # Inicia um novo bloco de dados
-                        dados_dict[bloco_atual] = {}
-                    else:
+                        dados_dict[bloco_atual] = {}# Inicia nova lista com dados da pessoa que sera o valor
+                    else:# Se chave for diferente de nome, chave sera Idade ou profissão, que estárao contidos em valor
                         dados_dict[bloco_atual][chave] = valor
                 else:
                     bloco_atual = None  # Reinicia o bloco ao encontrar uma linha vazia
